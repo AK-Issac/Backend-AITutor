@@ -76,17 +76,6 @@ You can verify the installation with :
 ollama list
 ```
 
----
-
-### 7. **Test Ollama in Command Line Interface**
-Avant d'intégrer Ollama dans Flask, testons-le directement :  
-```sh
-ollama run llama3.2
-```
-Si la commande affiche une réponse générée par l'IA, tout est bon ! 🚀
-
----
-
 ## Running the Application
 
 ### 7. **Run Ollama in server mode**
@@ -103,34 +92,6 @@ In another terminal, start Flask API with :
 python main.py
 ```
 Your server will be accessible on `http://127.0.0.1:8000`.
-
----
-
-## 🛠️ Tester avec Postman
-
-1. **Ouvrir Postman**  
-2. **Sélectionner "POST"**  
-3. **Entrer l'URL suivante** :  
-   ```
-   http://127.0.0.1:8000/api/chat
-   ```
-4. **Aller dans l'onglet "Body" → Sélectionner "raw" → Choisir "JSON"**  
-5. **Entrer ce JSON comme requête** :  
-   ```json
-   {
-       "message": "Bonjour, comment vas-tu ?"
-   }
-   ```
-6. **Cliquer sur "Send"** 🚀  
-
-Si tout fonctionne, vous recevrez une réponse de LLaMA comme ceci :  
-```json
-{
-    "response": "Bonjour ! Je vais bien, merci de demander. Comment puis-je vous aider ?"
-}
-```
-
----
 
 ## Debugging
 

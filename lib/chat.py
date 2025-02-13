@@ -1,5 +1,6 @@
 from flask import request, jsonify
 import subprocess
+import os
 
 context = """
     CONTEXTE GOES HERE
@@ -12,8 +13,8 @@ def send():
         return jsonify({"error": "Message is required"}), 400
 
     # Use Ollama's command-line interface to generate a response
-    result = subprocess.run(["ollama", "run", "llama3.2", prompt], capture_output=True, text=True)
-
+    result = subprocess.run([os.getenv("OLLAMA_ROUTE"), "run", "llama3.2", prompt], capture_output=True, text=True)
+    print(result)
     return jsonify({"response": result.stdout.strip()})
 
 def clear():
