@@ -1,21 +1,16 @@
-Voici votre **README.md** complet avec toutes les instructions :  
-
-```md
 #  AI Backend
 
-## 📌 Prérequis
-
-Avant de commencer, assurez-vous d'avoir installé :  
+## Prerequisites
 - **Python 3.x**  
-- **Pip 25.0 ou supérieur**  
+- **Pip 25.0**  
 - **Git**  
-- **Ollama** (disponible sur [ollama.com](https://ollama.com))
+- **Ollama** (Available on [ollama.com](https://ollama.com))
 
 ---
 
-## ⚡ Installation
+## Installation Guide
 
-### 1️⃣ **Cloner le Dépôt**
+### 1. **Clone the Repository**
 ```sh
 git clone https://github.com/AK-Issac/Backend-AITutor
 cd Backend-AITutor
@@ -23,67 +18,67 @@ cd Backend-AITutor
 
 ---
 
-### 2️⃣ **Créer un Environnement Virtuel**
+### 2. **Create a Virtual Environment**
 
-#### ✅ Windows :
+#### Windows :
 ```sh
 python -m venv venv
 ```
 
-#### ✅ Linux/Mac :
+#### Linux/Mac :
 ```sh
 python3 -m venv venv
 ```
 
 ---
 
-### 3️⃣ **Activer l'Environnement Virtuel**
+### 3. **Activate the Virtual Environment**
 
-#### ✅ Windows :
+#### Windows :
 ```sh
 venv\Scripts\activate
 ```
 
-#### ✅ Linux/Mac :
+#### Linux/Mac :
 ```sh
 source venv/bin/activate
 ```
 
 ---
 
-### 4️⃣ **Installer les Dépendances**
+### 4. **Install Dependencies**
 ```sh
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🚀 Installation et Configuration d'Ollama
+## Installation and Ollama Configuration 
 
-### 5️⃣ **Installer Ollama**
-Téléchargez et installez Ollama depuis [ollama.com](https://ollama.com).  
+### 5. **Install Ollama**
+Download and install Ollama from [ollama.com](https://ollama.com).  
 
-Ensuite, ouvrez votre terminal et exécutez :  
+Now execute :  
 ```sh
 ollama --version
 ```
-Si la commande fonctionne, Ollama est bien installé.
+If the command works, you're good to go
 
 ---
 
-### 6️⃣ **Télécharger le modèle LLaMA**
-Exécutez cette commande pour télécharger **LLaMA 3.2** :  
+### 6. **Download the LLama Model**
+Execute this command to install **LLaMA 3.2** :  
 ```sh
 ollama pull llama3.2
 ```
-Vous pouvez vérifier que le modèle est bien installé avec :  
+You can verify the installation with :  
 ```sh
 ollama list
 ```
 
 ---
 
-### 7️⃣ **Tester Ollama en ligne de commande**
+### 7. **Test Ollama in Command Line Interface**
 Avant d'intégrer Ollama dans Flask, testons-le directement :  
 ```sh
 ollama run llama3.2
@@ -92,22 +87,22 @@ Si la commande affiche une réponse générée par l'IA, tout est bon ! 🚀
 
 ---
 
-## 🏗️ Lancer le Serveur Flask
+## Running the Application
 
-### 8️⃣ **Démarrer Ollama en mode serveur**
-Ollama doit être actif avant de lancer Flask. Ouvrez un terminal et exécutez :  
+### 7. **Run Ollama in server mode**
+Ollama needs to run before running Flask. Open a terminal and run :  
 ```sh
 ollama serve
 ```
 
 ---
 
-### 9️⃣ **Lancer l'API Flask**
-Dans un autre terminal, démarrez l'API Flask avec :  
+### 8. **Launch Flask API**
+In another terminal, start Flask API with :  
 ```sh
 python main.py
 ```
-Votre serveur sera accessible sur `http://127.0.0.1:8000`.
+Your server will be accessible on `http://127.0.0.1:8000`.
 
 ---
 
@@ -137,41 +132,34 @@ Si tout fonctionne, vous recevrez une réponse de LLaMA comme ceci :
 
 ---
 
-## 🔍 Dépannage
+## Debugging
 
-Si vous avez une erreur, vérifiez les points suivants :
+If you have errors, verify the following points :
 
-✅ **Ollama est-il bien installé ?**  
+✅ **Is Ollama installed correctly ?**  
 ```sh
 ollama --version
 ```
 
-✅ **Le modèle est-il bien téléchargé ?**  
+✅ **Is the model installed correctly ?**  
 ```sh
 ollama list
 ```
 
-✅ **Ollama est-il en cours d'exécution ?**  
+✅ **Is Ollama running in server mode ?**  
 ```sh
 ollama serve
 ```
 
-✅ **Le serveur Flask est-il lancé ?**  
+✅ **Is the Flask server running ?**  
 ```sh
 python main.py
 ```
 
----
+## Deactivating the Virtual Environment
 
-## 🚫 Désactiver l'Environnement Virtuel
-Si vous souhaitez quitter l'environnement virtuel, exécutez :  
+To deactivate the virtual environment, run:
+
 ```sh
 deactivate
 ```
-
----
-
-🎉 **Félicitations !** Votre API Flask avec LLaMA fonctionne parfaitement ! 🚀
-```
-
-Tout est bien structuré et prêt à être utilisé sur **GitHub** ! 🎯
