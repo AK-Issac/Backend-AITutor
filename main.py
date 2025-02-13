@@ -1,18 +1,23 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_cors import CORS
-from dotenv import load_dotenv
-from lib.chat import clear, send
-import os
-
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-
-load_dotenv()
+import subprocess
 
 app = Flask(__name__)
 CORS(app)
 
-app.add_url_rule('/api/chat', 'clear', clear, methods=['DELETE'])
-app.add_url_rule('/api/chat', 'send', send, methods=['POST'])
+# API Endpoint for Chat using Ollama
+@app.route('/api/chat', methods=['POST'])
+def chat():
+    data = request.get_json()
+    prompt = data.get("message", "")
+
+    if not prompt:
+        return jsonify({"error": "Message is required"}), 400
+
+    # Use Ollama's command-line interface to generate a response
+    result = subprocess.run(["ollama", "run", "llama3.2", prompt], capture_output=True, text=True)
+
+    return jsonify({"response": result.stdout.strip()})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8000)
