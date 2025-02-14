@@ -41,10 +41,10 @@ ollama list
 Download and install FFmpeg from [github.com](https://github.com/BtbN/FFmpeg-Builds/releases).
 
 #### Windows :
-Install ffmpeg-master-latest-win64-gpl-shared.zip 
+Install **ffmpeg-master-latest-win64-gpl-shared.zip**
 
 #### Linux :
-Install ffmpeg-master-latest-linux64-gpl-shared.tar.xz
+Install **ffmpeg-master-latest-linux64-gpl-shared.tar.xz**
 
 ---
 
