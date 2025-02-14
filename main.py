@@ -1,6 +1,6 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from flask_cors import CORS
-import subprocess
+from lib.chat import send, transcribe
 
 app = Flask(__name__)
 CORS(app)
@@ -31,6 +31,6 @@ def chat():
     result = subprocess.run(["ollama", "run", "llama3.2", context], capture_output=True, text=True)
 
     return jsonify({"response": result.stdout.strip()})
-
+app.add_url_rule('/api/transcribe', 'transcribe', transcribe, methods=['POST'])
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8000)

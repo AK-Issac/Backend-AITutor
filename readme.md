@@ -1,21 +1,73 @@
-Voici votre **README.md** complet avec toutes les instructions :  
-
-```md
 #  AI Backend
 
-## 📌 Prérequis
-
-Avant de commencer, assurez-vous d'avoir installé :  
+## Prerequisites
 - **Python 3.x**  
-- **Pip 25.0 ou supérieur**  
+- **Pip 25.0**  
 - **Git**  
-- **Ollama** (disponible sur [ollama.com](https://ollama.com))
+- **Ollama** (Available on [ollama.com](https://ollama.com))
+- **FFmpeg** (Available on [github.com](https://github.com/BtbN/FFmpeg-Builds/releases))
+---
+
+## Installation Guide
+
+## Installation and Ollama Configuration
+
+### 1. **Install Ollama**
+Download and install Ollama from [ollama.com](https://ollama.com).  
+
+Now execute :  
+```sh
+ollama --version
+```
+If the command works, you're good to go
 
 ---
 
-## ⚡ Installation
+### 2. **Download the LLama Model**
+Execute this command to install **LLaMA 3.2** :  
+```sh
+ollama pull llama3.2
+```
+You can verify the installation with :  
+```sh
+ollama list
+```
 
-### 1️⃣ **Cloner le Dépôt**
+---
+
+## Installation and FFmpeg Configuration 
+
+### 1. **Install FFmpeg Build**
+Download and install FFmpeg from [github.com](https://github.com/BtbN/FFmpeg-Builds/releases).
+
+#### Windows :
+Install **ffmpeg-master-latest-win64-gpl-shared.zip**
+
+#### Linux :
+Install **ffmpeg-master-latest-linux64-gpl-shared.tar.xz**
+
+---
+
+### 2. **Configurate environment variables**
+Extract the folder and add the bin to system PATH
+
+---
+
+## Vosk installation
+
+### 1. **Install Vosk**
+Download and install Vosk from [alphacephei.com](https://alphacephei.com/vosk/models).
+
+---
+
+### 2. **Add Vosk to the project**
+Extract the folder and add Vosk to the **models** folder
+
+---
+
+## Project Installation
+
+### 1. **Clone the Repository**
 ```sh
 git clone https://github.com/AK-Issac/Backend-AITutor
 cd Backend-AITutor
@@ -23,155 +75,91 @@ cd Backend-AITutor
 
 ---
 
-### 2️⃣ **Créer un Environnement Virtuel**
+### 2. **Create a Virtual Environment**
 
-#### ✅ Windows :
+#### Windows :
 ```sh
 python -m venv venv
 ```
 
-#### ✅ Linux/Mac :
+#### Linux/Mac :
 ```sh
 python3 -m venv venv
 ```
 
 ---
 
-### 3️⃣ **Activer l'Environnement Virtuel**
+### 3. **Activate the Virtual Environment**
 
-#### ✅ Windows :
+#### Windows :
 ```sh
 venv\Scripts\activate
 ```
 
-#### ✅ Linux/Mac :
+#### Linux/Mac :
 ```sh
 source venv/bin/activate
 ```
 
 ---
 
-### 4️⃣ **Installer les Dépendances**
+### 4. **Install Dependencies**
 ```sh
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🚀 Installation et Configuration d'Ollama
+## Running the Application
 
-### 5️⃣ **Installer Ollama**
-Téléchargez et installez Ollama depuis [ollama.com](https://ollama.com).  
-
-Ensuite, ouvrez votre terminal et exécutez :  
-```sh
-ollama --version
-```
-Si la commande fonctionne, Ollama est bien installé.
-
----
-
-### 6️⃣ **Télécharger le modèle LLaMA**
-Exécutez cette commande pour télécharger **LLaMA 3.2** :  
-```sh
-ollama pull llama3.2
-```
-Vous pouvez vérifier que le modèle est bien installé avec :  
-```sh
-ollama list
-```
-
----
-
-### 7️⃣ **Tester Ollama en ligne de commande**
-Avant d'intégrer Ollama dans Flask, testons-le directement :  
-```sh
-ollama run llama3.2
-```
-Si la commande affiche une réponse générée par l'IA, tout est bon ! 🚀
-
----
-
-## 🏗️ Lancer le Serveur Flask
-
-### 8️⃣ **Démarrer Ollama en mode serveur**
-Ollama doit être actif avant de lancer Flask. Ouvrez un terminal et exécutez :  
+### 1. **Run Ollama in server mode**
+Ollama needs to run before running Flask. Open a terminal and run :  
 ```sh
 ollama serve
 ```
 
 ---
 
-### 9️⃣ **Lancer l'API Flask**
-Dans un autre terminal, démarrez l'API Flask avec :  
+### 2. **Launch Flask API**
+In another terminal, start Flask API with :  
 ```sh
 python main.py
 ```
-Votre serveur sera accessible sur `http://127.0.0.1:8000`.
+Your server will be accessible on `http://127.0.0.1:8000`.
 
----
+## Debugging
 
-## 🛠️ Tester avec Postman
+If you have errors, verify the following points :
 
-1. **Ouvrir Postman**  
-2. **Sélectionner "POST"**  
-3. **Entrer l'URL suivante** :  
-   ```
-   http://127.0.0.1:8000/api/chat
-   ```
-4. **Aller dans l'onglet "Body" → Sélectionner "raw" → Choisir "JSON"**  
-5. **Entrer ce JSON comme requête** :  
-   ```json
-   {
-       "message": "Bonjour, comment vas-tu ?"
-   }
-   ```
-6. **Cliquer sur "Send"** 🚀  
-
-Si tout fonctionne, vous recevrez une réponse de LLaMA comme ceci :  
-```json
-{
-    "response": "Bonjour ! Je vais bien, merci de demander. Comment puis-je vous aider ?"
-}
+✅ **Is FFmpegtalled correctly ?**  
+```sh
+ffmpeg -version
 ```
 
----
-
-## 🔍 Dépannage
-
-Si vous avez une erreur, vérifiez les points suivants :
-
-✅ **Ollama est-il bien installé ?**  
+✅ **Is Ollama installed correctly ?**  
 ```sh
 ollama --version
 ```
 
-✅ **Le modèle est-il bien téléchargé ?**  
+✅ **Is the model installed correctly ?**  
 ```sh
 ollama list
 ```
 
-✅ **Ollama est-il en cours d'exécution ?**  
+✅ **Is Ollama running in server mode ?**  
 ```sh
 ollama serve
 ```
 
-✅ **Le serveur Flask est-il lancé ?**  
+✅ **Is the Flask server running ?**  
 ```sh
 python main.py
 ```
 
----
+## Deactivating the Virtual Environment
 
-## 🚫 Désactiver l'Environnement Virtuel
-Si vous souhaitez quitter l'environnement virtuel, exécutez :  
+To deactivate the virtual environment, run:
+
 ```sh
 deactivate
 ```
-
----
-
-🎉 **Félicitations !** Votre API Flask avec LLaMA fonctionne parfaitement ! 🚀
-```
-
-Tout est bien structuré et prêt à être utilisé sur **GitHub** ! 🎯

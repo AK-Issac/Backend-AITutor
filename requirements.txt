@@ -1,3 +1,5 @@
 Flask
 flask-cors
 python-dotenv
+llama-cpp-python
+vosk
