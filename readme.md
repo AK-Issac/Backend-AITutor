@@ -5,10 +5,67 @@
 - **Pip 25.0**  
 - **Git**  
 - **Ollama** (Available on [ollama.com](https://ollama.com))
-
+- **FFmpeg** (Available on [github.com](https://github.com/BtbN/FFmpeg-Builds/releases))
 ---
 
 ## Installation Guide
+
+## Installation and Ollama Configuration
+
+### 1. **Install Ollama**
+Download and install Ollama from [ollama.com](https://ollama.com).  
+
+Now execute :  
+```sh
+ollama --version
+```
+If the command works, you're good to go
+
+---
+
+### 2. **Download the LLama Model**
+Execute this command to install **LLaMA 3.2** :  
+```sh
+ollama pull llama3.2
+```
+You can verify the installation with :  
+```sh
+ollama list
+```
+
+---
+
+## Installation and FFmpeg Configuration 
+
+### 1. **Install FFmpeg Build**
+Download and install FFmpeg from [github.com](https://github.com/BtbN/FFmpeg-Builds/releases).
+
+#### Windows :
+Install **ffmpeg-master-latest-win64-gpl-shared.zip**
+
+#### Linux :
+Install **ffmpeg-master-latest-linux64-gpl-shared.tar.xz**
+
+---
+
+### 2. **Configurate environment variables**
+Extract the folder and add the bin to system PATH
+
+---
+
+## Vosk installation
+
+### 1. **Install Vosk**
+Download and install Vosk from [alphacephei.com](https://alphacephei.com/vosk/models).
+
+---
+
+### 2. **Add Vosk to the project**
+Extract the folder and add Vosk to the **models** folder
+
+---
+
+## Project Installation
 
 ### 1. **Clone the Repository**
 ```sh
@@ -53,43 +110,9 @@ pip install -r requirements.txt
 
 ---
 
-## Installation and Ollama Configuration 
-
-### 5. **Install Ollama**
-Download and install Ollama from [ollama.com](https://ollama.com).  
-
-Now execute :  
-```sh
-ollama --version
-```
-If the command works, you're good to go
-
----
-
-### 6. **Download the LLama Model**
-Execute this command to install **LLaMA 3.2** :  
-```sh
-ollama pull llama3.2
-```
-You can verify the installation with :  
-```sh
-ollama list
-```
-
----
-
-### 7. **Test Ollama in Command Line Interface**
-Avant d'intégrer Ollama dans Flask, testons-le directement :  
-```sh
-ollama run llama3.2
-```
-Si la commande affiche une réponse générée par l'IA, tout est bon ! 🚀
-
----
-
 ## Running the Application
 
-### 7. **Run Ollama in server mode**
+### 1. **Run Ollama in server mode**
 Ollama needs to run before running Flask. Open a terminal and run :  
 ```sh
 ollama serve
@@ -97,44 +120,21 @@ ollama serve
 
 ---
 
-### 8. **Launch Flask API**
+### 2. **Launch Flask API**
 In another terminal, start Flask API with :  
 ```sh
 python main.py
 ```
 Your server will be accessible on `http://127.0.0.1:8000`.
 
----
-
-## 🛠️ Tester avec Postman
-
-1. **Ouvrir Postman**  
-2. **Sélectionner "POST"**  
-3. **Entrer l'URL suivante** :  
-   ```
-   http://127.0.0.1:8000/api/chat
-   ```
-4. **Aller dans l'onglet "Body" → Sélectionner "raw" → Choisir "JSON"**  
-5. **Entrer ce JSON comme requête** :  
-   ```json
-   {
-       "message": "Bonjour, comment vas-tu ?"
-   }
-   ```
-6. **Cliquer sur "Send"** 🚀  
-
-Si tout fonctionne, vous recevrez une réponse de LLaMA comme ceci :  
-```json
-{
-    "response": "Bonjour ! Je vais bien, merci de demander. Comment puis-je vous aider ?"
-}
-```
-
----
-
 ## Debugging
 
 If you have errors, verify the following points :
+
+✅ **Is FFmpegtalled correctly ?**  
+```sh
+ffmpeg -version
+```
 
 ✅ **Is Ollama installed correctly ?**  
 ```sh
