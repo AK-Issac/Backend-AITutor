@@ -33,6 +33,8 @@ You can verify the installation with :
 ollama list
 ```
 
+---
+
 ## Installation and FFmpeg Configuration 
 
 ### 1. **Install FFmpeg Build**
@@ -49,6 +51,8 @@ Install ffmpeg-master-latest-linux64-gpl-shared.tar.xz
 ### 2. **Configurate environment variables**
 Extract the folder and add the bin to system PATH
 
+---
+
 ## Vosk installation
 
 ### 1. **Install Vosk**
@@ -58,6 +62,8 @@ Download and install Vosk from [alphacephei.com](https://alphacephei.com/vosk/mo
 
 ### 2. **Add Vosk to the project**
 Extract the folder and add Vosk to the **models** folder
+
+---
 
 ## Project Installation
 
