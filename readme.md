@@ -4,6 +4,7 @@
 - **Python 3.x**  
 - **Pip 25.0**  
 - **Git**  
+- **C++ Compiler** (Available on [visualstudio.microsoft.com](https://visualstudio.microsoft.com/vs/features/cplusplus/))
 - **Ollama** (Available on [ollama.com](https://ollama.com))
 - **FFmpeg** (Available on [github.com](https://github.com/BtbN/FFmpeg-Builds/releases))
 ---
@@ -61,7 +62,7 @@ Download and install Vosk from [alphacephei.com](https://alphacephei.com/vosk/mo
 ---
 
 ### 2. **Add Vosk to the project**
-Extract the folder and add Vosk to the **models** folder
+Extract the folder, create a folder named **models** in the project folder and add Vosk to it
 
 ---
 
