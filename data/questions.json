@@ -1,0 +1,376 @@
+[
+    {
+        "sentence": "Au chalet, je dormirais bien.",
+        "questions": [
+            {
+                "question": "Qui est « je »",
+                "answers": ["Marc, le personnage principal"]
+            },
+            {
+                "question": "Que visualises-tu ?",
+                "answers": [
+                    "Marc au volant de sa voiture qui conduit sur l’autoroute 55.",
+                    "C’est la nuit, il fait noir.",
+                    "La seule lumière doit être la lueur du tableau de bord sur son visage."
+                ]
+            }
+        ]
+    },
+    {
+        "sentence": "Me coucherais tôt.",
+        "questions": [
+            {
+                "question": "Qu’est-ce qui manque à cette phrase?",
+                "answers": ["Le pronom « je »"]
+            },
+            {
+                "question": "Pourquoi il manque le « je »?",
+                "answers": ["Niveau de langue plus familier. Oral"]
+            },
+            {
+                "question": "Qu’en déduis-tu?",
+                "answers": ["Que le personnage se parle à lui-même, fait un monologue."]
+            }
+        ]
+    },
+    {
+        "sentence": "Pour la perdrix, pas besoin de se lever aux aurores.",
+        "vocabulary": [
+            {
+                "word": "Perdrix",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Perdrix : Oiseau de taille moyenne, au plumage roux cendré ou gris cendré qui est très apprécié comme gibier. © 2024 Éditions Le Robert"
+                }
+            },
+            {
+                "word": "Aurores",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Aurore : Lueur brillante et rosée qui suit l'aube et précède le lever du soleil ; moment où le soleil va se lever. © 2024 Éditions Le Robert"
+                }
+            }
+        ],
+        "questions": [
+            {
+                "question": "Quel est le sens de cette phrase? Pour « chasser » la perdrix, pas besoin de se lever avant le soleil.",
+                "answers": ["Expression québécoise signifiant la chasse à un animal particulier : pour l’orignal, pour la truite, pour la perdrix."]
+            }
+        ]
+    },
+    {
+        "sentence": "Sept, huit heures d’un sommeil sans interruption, sans même un rêve ou deux, sans penser à, ou alors si peu, et de façon générale, dans le cadre global des échecs d’une vie d’amoureux.",
+        "vocabulary": [
+            {
+                "expression": "...dans le cadre global des échecs d’une vie d’amoureux.",
+                "question": "Es-tu capable de deviner le sens de cette expression en te basant sur la manière dont elle est construite ou avec le contexte dans lequel elle est utilisée?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Cette expression fait référence à l'idée que la personne a traversé plusieurs échecs dans sa vie amoureuse. Elle suggère que toutes les relations de Marc ont été des échecs, ce qui est symbolisé par le terme 'cadre global'."
+                }
+            }            
+        ],
+        "questions": [
+            {
+                "question": "Est-ce que cette phrase est syntaxiquement correcte?",
+                "answers": ["Non, il y a des propositions sans complément, qui ne sont pas finies."]
+            },
+            {
+                "question": "Pourquoi est-ce ainsi?",
+                "answers": ["Parce que le personnage se parle à lui-même, nous sommes dans sa tête."]
+            },
+            {
+                "question": "Quel est le sens de cette phrase?",
+                "answers": ["Marc veut dormir profondément.", "Il ne veut pas penser.", "Où presque pas penser à ses échecs amoureux."]
+            }
+        ]
+    },
+    {
+        "sentence": "Le sommeil lui-même étant la chose rêvée.",
+        "questions": [
+            {
+                "question": "Quel est le sens de cette phrase?",
+                "answers": ["Marc ne souhaite que dormir"]
+            }
+        ]
+    },
+    {
+        "sentence": "Et la forêt défilait, noire et unie, basculant de chaque côté dans un néant renouvelable qui rendait tangible la fuite contre laquelle luttait ma mémoire.",
+        "vocabulary": [
+            {
+                "word": "Décanter",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Décanter : se donner un temps de réflexion afin d'y voir plus clair. Devenir plus clair, se clarifier. © 2024 Éditions Le Robert"
+                }
+            },
+            {
+                "word": "Alerte",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Alerte : Vigilant. Vif et leste.  © 2024 Éditions Le Robert"
+                }
+            },
+            {
+                "word": "Sinueux",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Sinueux : Qui présente une suite de courbes irrégulières et dans des sens différents. ➙ courbe, ondoyant, ondulé, onduleux © 2024 Éditions Le Robert"
+                }
+            },
+            {
+                "word": "Hanté",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Hanté : Visité par les fantômes, les revenants, les esprits. Château hanté.  © 2024 Éditions Le Robert."
+                }
+            },
+            {
+                "word": "Poids lourds",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Poids lourds : Gros camions de transport"
+                }
+            }
+        ],
+        "questions": [
+            {
+                "question": "Marc se sent plus alerte sous l’effet de l’alcool, c’est plustôt le contraire, d’habitude. Comment explique-tu cela?",
+                "answers": ["Marc se sent moins ivre et donc moins vigilant! Il est donc à son meilleur sous l’effet de l’alcool."]
+            },
+            {
+                "question": "Pourquoi il dit que la route est « hantée » par les poids lourds?",
+                "answers": ["Probablement parce qu’il n’y a pas beaucoup de trafic dans la nuit. Cela donne aussi une impression de danger."]
+            }
+        ]
+    },
+    {
+        "sentence": "J’ai baissé la vitre et un filet d’air glacé s’est engouffré à l’intérieur avec la précision d’une lame.",
+        "vocabulary": [
+            {
+                "word": "Engouffré",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Engouffré : V. pron. Disparaître, être entraîné dans un gouffre. Par ext. Se précipiter avec violence dans une ouverture, un passage. Vent qui s'engouffre dans un couloir. © 2024 Éditions Le Robert"
+                }
+            }            
+        ],
+        "questions": [
+            {
+                "question": "Quelle est cette vitre?",
+                "answers": ["Celle de la portière de sa voiture."]
+            },
+            {
+                "question": "Que visualises-tu?",
+                "answers": ["Pour retrouver sa concentration, Marc fait entrer de l’air froid par la vitre de sa voiture."]
+            },
+            {
+                "question": "De quelle lame s’agit-il?",
+                "answers": ["Une lame de couteau."]
+            },
+            {
+                "question": "Quel est le rapport entre l’air glacé et un couteau?",
+                "answers": ["L’air est si froid que c’est coupant comme un couteau."]
+            }
+        ]
+    },
+    {
+        "sentence": "Betsi pendant ce temps :\nTu es si seul\nMon ami\nDans ce noir\nTu es si seul\nMon amour\nEt moi toujours",
+        "questions": [
+            {
+                "question": "La disposition du texte est différente. Qu’est-ce cela indique?",
+                "answers": ["Qu’il s’agit des mots d’une chanson qui joue à la radio."]
+            },
+            {
+                "question": "Qui est Betsi?",
+                "answers": ["Dans la présentation du texte on dit que c’est une vedette de la chanson."]
+            },
+            {
+                "question": "Qu’est-ce que tu déduis?",
+                "answers": ["Que la radio de l’auto est allumée et que la musique joue."]
+            },
+            {
+                "question": "Que penses-tu des paroles de la chanson?",
+                "answers": ["La chanson représente exactement la situation de Marc qui, triste et solitaire roule dans la nuit. C’est comme si Betsi lui parlait."]
+            }
+        ]
+    },
+    {
+        "sentence": "Je me suis dit c’est un cheval, puis tout de suite non c’est un orignal qui traverse la route et j’ai pensé je vais le, ses pattes interminables et la chose était en train de se produire.",
+        "questions": [
+            {
+                "question": "Ouf! Est-ce que tu comprends ce qui se passe?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Relit la phrase."
+                }
+            },
+            {
+                "question": "Que visualises-tu?",
+                "answers": []
+            },
+            {
+                "question": "Qu’est-ce qui est décrit?",
+                "answers": [
+                    "Il y a un orignal sur la route.",
+                    "Il voit ses pattes donc l’auto se rapproche."
+                ]
+            },
+            {
+                "question": "Qu’est-ce que « la chose » qui est en train de se produire?",
+                "answers": ["Une collision avec l’orignal."]
+            },
+            {
+                "question": "Trouves-tu que la phrase respecte la syntaxe?",
+                "answers": ["Non, les propositions ne sont pas complètes."]
+            },
+            {
+                "question": "Pourquoi est-elle formulée ainsi?",
+                "answers": ["Pour faire comme si on y était: l’auto roule vite et l’accident se produit en quelques secondes. C’est normal de ne pas avoir le temps de finir sa phrase."]
+            }
+        ]
+    },
+    {
+        "sentence": "Le choc initial fut étrangement ténu, compte tenu de la stature du cervidé fauché à la hauteur de ses grandes pattes grêles, et je voyais comme au ralenti se peindre un air ennuyé sur les traits de la bête tandis qu’un bref envol la soulevait pour la renverser sur le capot.",
+        "vocabulary": [
+            {
+                "word": "Ténu",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Ténu : Très mince, très fin, très petit © 2024 Éditions Le Robert"
+                }
+            },
+            {
+                "word": "Stature",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Stature : Le corps considéré dans sa taille. <i>Une personne de haute stature.<i/> © 2024 Éditions Le Robert"
+                }
+            },
+            {
+                "word": "Cervidé",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Cervidé : Famille de mammifères ongulés <i>(ruminants)<i/> dont les mâles portent des appendices frontaux , les bois*. <i>Les cerfs, caribous, chevreuils, daims, élans, muntjacs, orignaux et les rennes sont des cervidés.<i/> © 2024 Éditions Le Robert"
+                }
+            },
+            {
+                "word": "Fauché",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": " Fauché : Faire tomber. ➙ abattre, 1. coucher. <i>« Des rafales secouant les buissons, fauchant les fleurs »<i/> (Green). ▫ <i>Faucher qqn<i/> : faire tomber en blessant, en tuant. <i>Assaillants fauchés par le tir des mitrailleuses.<i/> © 2024 Éditions Le Robert"
+                }
+            },
+            {
+                "word": "Grêles",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Grêles : D'une longueur, d'une finesse excessive. ➙ filiforme, 2. fin, fluet, 1. maigre, mince. <i>Un échassier perché sur ses pattes grêles.<i/> © 2024 Éditions Le Robert"
+                }
+            }
+        ],
+        "questions": [
+            {
+                "question": "Quel est l’antécédent du pronom « la »?",
+                "answers": ["La bête", "le cervidé", "l'orignal"]
+            },
+            {
+                "question": "C’est gros comment, un orignal?",
+                "answers": [
+                    "Le mâle pèse entre 329 et 635 kg (entre 725 et 1399 livres), et la femelle, entre 227 et 460 kg (500 à 1014 livres). La longueur d'un orignal varie de 2,40 à 3,00 m ( 6,5 à 9,8 pieds). Sa hauteur à l'épaule peut atteindre de 1,85 à 2,10 m (3,32 à 6,5 pieds).", 
+                    "Un orignal c’est presque aussi lourd, gros et grand qu’une petite auto !"
+                ],
+                "extra_info": "Une voiture compacte peut peser 920 kg!"
+            },
+            {
+                "question": "Comment imagines-tu la face de l’orignal?",
+                "answers": []
+            },
+            {
+                "question": "Est-ce que c’est possible qu’un animal ait un « air ennuyé »?",
+                "answers": ["Pas vraiment. C’est un attribut humain plus qu’animal. Étrange"]
+            }
+        ],
+        "instructions": [
+           {
+                "instruction": "Visualise les étapes de l’accident :",
+                "steps": [
+                    "1- L'auto percute les pattes de l’orignal.",
+                    "2- L'orignal semble ennuyé, contrarié par l'accident.",
+                    "3- Le choc soulève la bête qui retombe sur le capot.",
+                    "4- L’orignal étant très lourd, il doit tout briser en tombant sur le capot."
+                ]
+            }
+        ]
+    },
+    {
+        "sentence": "J’ai eu le temps de penser à un détail que j’ai tout de suite oublié mais que sur le coup j’aurais voulu retenir indéfiniment, et l’énorme animal s’écrasait sur le pare-brise, causant un fracas si invraisemblable que j’ai continué de regarder droit devant moi comme si le voyage avait dû se poursuivre normalement, et c’est pourquoi sans doute j’ai réussi à conserver la maîtrise du véhicule alors que l’orignal replié sur lui-même prenait place à côté de moi.",
+        "vocabulary": [
+            {
+                "word": "Indéfiniment",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Indéfiniment : D'une manière indéfinie. ➙ éternellement, perpétuellement © 2024 Éditions Le Robert"
+                }
+            },
+            {
+                "word": "Fracas",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Fracas : Bruit qui résulte d'une rupture violente, de chocs ; par ext. Bruit violent. <i>Le fracas de l'orage, des vagues.<i/> © 2024 Éditions Le Robert."
+                }
+            },
+            {
+                "word": "Invraisemblable",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Invraisemblable : Qui n'est pas vraisemblable, ne semble pas vrai. ➙ impensable, incroyable. © 2024 Éditions Le Robert."
+                }
+            },
+            {
+                "word": "Maîtrise",
+                "question": "Es-tu capable de deviner le sens de ce mot de la manière dont il est construit ou avec les mots qui l’entoure?",
+                "answers": {
+                    "positive": "bravo, continue ta lecture",
+                    "negative": "Maîtrise : Qualité, fonction d'une personne qui commande, exerce sa domination. ➙ autorité, domination, 2. pouvoir, souveraineté. © 2024 Éditions Le Robert."
+                },
+                "extra_info": "Donc, il ne perd pas le contrôle de son auto."
+            }
+        ],
+        "questions": [
+            {
+                "question": "Est-ce que le choix d’un mot ou d’une expression de semble bizarre?",
+                "answers": ["« prendre place »: « …l’orignal replié sur lui-même prenait place à côté de moi. »"],
+                "extra_info": "Tu as raison. L’expression « prendre place » signifie s’installer, s’asseoir. Pas logique dans le contexte où l’orignal « s’écrase » sur l’auto. C’est comme si l’orignal avait «décidé» de s’asseoir dans l’auto"
+            }
+        ],
+        "instructions": [
+           {
+                "instruction": "Relis la phrase en la visualisant",
+                "steps": [
+                    "1- L'auto percute les pattes de l’orignal.",
+                    "2- L'orignal semble ennuyé, contrarié par l'accident.",
+                    "3- Le choc soulève la bête qui retombe sur le capot.",
+                    "4- L’orignal étant très lourd, il doit tout briser en tombant sur le capot."
+                ]
+
+            }
+        ]
+    }
+]

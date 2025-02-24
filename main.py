@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_cors import CORS
-from lib.chat import send, answerquestion, askquestion, sendComprehension
+from lib.chat import send, sendComprehension
 from lib.speech_recognition import transcribe
+from lib.lecture import answerquestion, askquestion
 
 app = Flask(__name__)
 CORS(app)
