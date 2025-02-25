@@ -1,30 +1,13 @@
 from flask import request, jsonify
 import subprocess
+import sys
+import locale
 
-def send():
-    data = request.get_json()
-    original_text = data.get("original_text", "").strip()
-    human_text = data.get("human_text", "").strip()
-
-    if not original_text or not human_text:
-        return jsonify({"error": "Les deux textes (original et humain) sont requis."}), 400
-
-    # Définition du contexte pour l'IA
-    context = (
-        "Vous êtes une IA tuteur de langue française. Votre rôle est d'aider les utilisateurs "
-        "à reformuler des textes de manière correcte et naturelle.\n\n"
-        "Voici le texte original fourni :\n"
-        f"\"{original_text}\"\n\n"
-        "Voici la reformulation de l'utilisateur :\n"
-        f"\"{human_text}\"\n\n"
-        "Analysez cette reformulation et indiquez si elle est correcte ou s'il y a des erreurs. "
-        "Si elle est incorrecte, proposez une version améliorée avec des explications claires."
-    )
-
-    # Exécution de Ollama avec le contexte et les inputs
-    result = subprocess.run(["ollama", "run", "llama3.2", context], capture_output=True, text=True)
-
-    return jsonify({"response": result.stdout.strip()})
+# Forcer l'encodage UTF-8 global
+sys.stdin.reconfigure(encoding='utf-8')
+sys.stdout.reconfigure(encoding='utf-8')
+sys.stderr.reconfigure(encoding='utf-8')
+locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 def clear():
     #TODO Make the clearing for the memory of the current page
@@ -32,57 +15,68 @@ def clear():
 
 def sendComprehension():
     data = request.get_json()
-    schema_type = data.get("schema_type", "").strip()  # "actentiel", "narratif", ou "communication"
-    schema_data = data.get("schema_data", {})  # Données du schéma
+    schema_type = data.get("schema_type", "").strip()
+    schema_data = data.get("schema_data", {})
 
     if not schema_type or not schema_data:
         return jsonify({"error": "Le type de schéma et les données sont requis."}), 400
 
-    # Définition du contexte pour l'IA en fonction du type de schéma
-    context = ""
-    if schema_type == "actentiel":
-        context = (
-            "Vous êtes une IA tuteur de langue française. Votre rôle est d'aider les utilisateurs "
-            "à analyser un texte en utilisant le schéma actentiel.\n\n"
-            "Voici les données fournies par l'utilisateur :\n"
-            f"Destinataire : {schema_data.get('destinataire', '')}\n"
-            f"Destinateur : {schema_data.get('destinateur', '')}\n"
-            f"Héros : {schema_data.get('hero', '')}\n"
-            f"Quête : {schema_data.get('quete', '')}\n"
-            f"Adjuvant : {schema_data.get('adjuvant', '')}\n"
-            f"Opposant : {schema_data.get('opposant', '')}\n\n"
-            "Analysez ces éléments et fournissez une réponse structurée."
+    # Réponses modèles prédéfinies
+    model_responses = {
+        "actentiel": (
+            "Sujet : Marc Carrière\n"
+            "Objet : Rejoindre son chalet sans encombre\n"
+            "Destinateur : Son désir de repos et d'oubli\n"
+            "Destinataire : Lui-même (son bien-être)\n"
+            "Adjuvants : La solitude, la musique qui joue à la radio\n"
+            "Opposants : L'alcool, la route sinueuse, l'orignal"
+        ),
+        "narratif": (
+            "Situation initiale : Marc roule de nuit sur l'autoroute 55 en direction de son chalet\n"
+            "Élément déclencheur : Un orignal surgit soudainement sur la route\n"
+            "Péripéties : Marc réalise qu'il va heurter l'animal/L'accident se produit\n"
+            "Dénouement : L'orignal atterrit sur le siège passager\n"
+            "Situation finale : Marc continue à rouler en état de choc"
+        ),
+        "communication": (
+            "Qui parle ? : Le narrateur (point de vue externe ou interne)\n"
+            "À qui ? : Au lecteur du roman\n"
+            "Pourquoi ? : Raconter un événement marquant reflétant l'état psychologique\n"
+            "Qui fait l'action ? : Marc Carrière\n"
+            "Comment ? : En conduisant distrait puis en percutant l'orignal\n"
+            "Où ? : Autoroute 55, environnement nocturne\n"
+            "Quand ? : Pendant un trajet de nuit vers le chalet"
         )
-    elif schema_type == "narratif":
-        context = (
-            "Vous êtes une IA tuteur de langue française. Votre rôle est d'aider les utilisateurs "
-            "à analyser un texte en utilisant le schéma narratif.\n\n"
-            "Voici les données fournies par l'utilisateur :\n"
-            f"Situation Initiale : {schema_data.get('situationInitiale', '')}\n"
-            f"Déroulement : {schema_data.get('deroulement', '')}\n"
-            f"Péripétie : {schema_data.get('peripetie', '')}\n"
-            f"Dénouement : {schema_data.get('denouement', '')}\n"
-            f"Situation Finale : {schema_data.get('situationFinale', '')}\n\n"
-            "Analysez ces éléments et fournissez une réponse structurée."
-        )
-    elif schema_type == "communication":
-        context = (
-            "Vous êtes une IA tuteur de langue française. Votre rôle est d'aider les utilisateurs "
-            "à analyser un texte en utilisant la situation de communication.\n\n"
-            "Voici les données fournies par l'utilisateur :\n"
-            f"Qui parle ? : {schema_data.get('quiParle', '')}\n"
-            f"À qui ? : {schema_data.get('aQui', '')}\n"
-            f"Pourquoi ? : {schema_data.get('pourquoi', '')}\n"
-            f"Qui fait l'action ? : {schema_data.get('quiFaitAction', '')}\n"
-            f"Comment ? : {schema_data.get('comment', '')}\n"
-            f"Où ? : {schema_data.get('ou', '')}\n"
-            f"Quand ? : {schema_data.get('quand', '')}\n\n"
-            "Analysez ces éléments et fournissez une réponse structurée."
-        )
-    else:
-        return jsonify({"error": "Type de schéma non reconnu."}), 400
+    }
 
-    # Exécution de Ollama avec le contexte et les inputs
-    result = subprocess.run(["ollama", "run", "llama3.2", context], capture_output=True, text=True)
+    # Construction du contexte pédagogique
+    context = (
+        "Vous êtes un tuteur de français expert en analyse littéraire. "
+        "Votre rôle est de comparer la réponse de l'élève avec une réponse modèle "
+        "pour l'aider à progresser. Procédez en 4 étapes :\n\n"
+        "1. Valider les éléments corrects\n"
+        "2. Pointer les erreurs/manques\n"
+        "3. Expliquer avec des exemples du texte\n"
+        "4. Proposer des pistes d'amélioration\n\n"
+        "Réponse de l'élève pour le schéma " + schema_type + " :\n" +
+        "\n".join([f"{k} : {v}" for k, v in schema_data.items()]) +
+        "\n\nRéponse modèle attendue :\n" + model_responses[schema_type] + 
+        "\n\nAnalyse comparative :\n"
+        "- Comparez point par point les deux versions\n"
+        "- Soulignez les éléments clés manquants dans la réponse élève\n"
+        "- Expliquez pourquoi la réponse modèle est pertinente en citant le texte\n"
+        "- Restez bienveillant et pédagogique dans vos remarques"
+    )
 
-    return jsonify({"response": result.stdout.strip()})
+    result = subprocess.run(
+    ["ollama", "run", "llama3.2", context],
+    capture_output=True,
+    text=True,
+    encoding='utf-8',  # Forcer l'encodage UTF-8
+    errors='replace'   # Remplacer les caractères invalides par un symbole de remplacement
+)
+
+    return jsonify({
+    "response": result.stdout.strip(),
+    "model_response": model_responses[schema_type]
+}), 200, {'Content-Type': 'application/json; charset=utf-8'}
