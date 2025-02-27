@@ -58,6 +58,8 @@ Extract the folder and add the bin to system PATH
 
 ### 1. **Install Vosk**
 Download and install Vosk from [alphacephei.com](https://alphacephei.com/vosk/models).
+French
+vosk-model-fr-0.22
 
 ---
 
