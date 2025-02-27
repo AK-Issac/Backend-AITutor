@@ -62,7 +62,6 @@ def send():
             text=True,
             encoding='utf-8',  # Forcer l'encodage UTF-8
             errors='replace',  # Remplacer les caractères invalides
-            timeout=30
         )
         return jsonify({
             "response": result.stdout.strip(),
