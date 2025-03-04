@@ -68,14 +68,7 @@ def sendComprehension():
         "- Restez bienveillant et pédagogique dans vos remarques"
     )
 
-    result = subprocess.run(
-    ["ollama", "run", "llama3.2", context],
-    capture_output=True,
-    text=True,
-    encoding='utf-8',  # Forcer l'encodage UTF-8
-    errors='replace'   # Remplacer les caractères invalides par un symbole de remplacement
-)
-
+    result = subprocess.run(["ollama", "run", "llama3.2", context], capture_output=True, text=True, encoding="utf-8", check=True)
     return jsonify({
     "response": result.stdout.strip(),
     "model_response": model_responses[schema_type]
