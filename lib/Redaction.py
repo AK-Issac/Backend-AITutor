@@ -56,13 +56,7 @@ def send():
 
     # Exécution de l'analyse
     try:
-        result = subprocess.run(
-            ["ollama", "run", "llama3.2", context],
-            capture_output=True,
-            text=True,
-            encoding='utf-8',  # Forcer l'encodage UTF-8
-            errors='replace',  # Remplacer les caractères invalides
-        )
+        result = subprocess.run(["ollama", "run", "llama3.2", context], capture_output=True, text=True, encoding="utf-8", check=True)
         return jsonify({
             "response": result.stdout.strip(),
             "analysis": {
@@ -164,14 +158,7 @@ def send2():
 
     # Exécution de l'analyse
     try:
-        result = subprocess.run(
-            ["ollama", "run", "llama3.2", context],
-            capture_output=True,
-            text=True,
-            encoding='utf-8',  # Forcer l'encodage UTF-8
-            errors='replace',  # Remplacer les caractères invalides
-            
-        )
+        result = subprocess.run(["ollama", "run", "llama3.2", context], capture_output=True, text=True, encoding="utf-8", check=True)
         
         return jsonify({
             "response": result.stdout.strip(),
